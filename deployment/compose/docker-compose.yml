@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  data-gateway:
+    build:
+      context: ../../services/data-gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    volumes:
+      - gateway-data:/app/data
+    networks:
+      - app-network
+    environment:
+      - API_HOST=0.0.0.0
+      - API_PORT=8080
+    restart: unless-stopped
+
+  map-dashboard:
+    build:
+      context: ../../web/map-dashboard
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - ../../web/map-dashboard:/app
+    networks:
+      - app-network
+    environment:
+      - API_URL=http://data-gateway:8080
+      - FLASK_APP=app.py
+      - FLASK_ENV=development
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=5001
+    depends_on:
+      - data-gateway
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  gateway-data:
+  mongodb_data: 
