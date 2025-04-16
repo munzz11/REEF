@@ -1,6 +1,6 @@
 [submodule "services/data-gateway"]
 	path = services/data-gateway
 	url = https://github.com/munzz11/data-gateway
-[submodule "web/data-gateway"]
-	path = web/data-gateway
-	url = https://github.com/munzz11/data-gateway
+[submodule "web/map-dashboard"]
+	path = web/map-dashboard
+	url = https://github.com/munzz11/map-dashboard
