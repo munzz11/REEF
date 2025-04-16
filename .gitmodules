@@ -4,3 +4,6 @@
 [submodule "web/map-dashboard"]
 	path = web/map-dashboard
 	url = https://github.com/munzz11/map-dashboard
+[submodule "services/data-ingestion-scanner"]
+	path = services/data-ingestion-scanner
+	url = https://github.com/munzz11/data-ingestion-scanner

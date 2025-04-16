@@ -1,4 +1,4 @@
-# REEF (Robotic Environment Exploration Framework)
+# REEF (Reporting and Event Evaluation Framework)
 
 [![GitHub issues](https://img.shields.io/github/issues/munzz11/reef)](https://github.com/munzz11/reef/issues)
 
